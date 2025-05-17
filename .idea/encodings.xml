@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/admin-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/admin-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/back-framework/base-framework-commom/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/back-framework/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/back-framework/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common-web/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/payment-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/payment-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/security-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/security-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-api/admin-service-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-api/admin-service-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-api/order-service-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-api/order-service-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-api/payment-service-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-api/payment-service-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-api/user-service-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-api/user-service-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-service/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

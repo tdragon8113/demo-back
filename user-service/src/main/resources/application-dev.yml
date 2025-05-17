@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/user-db
+    username: root
+    password: 1234

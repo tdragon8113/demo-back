@@ -1,7 +1,0 @@
-spring:
-  application:
-    name: user-service-local
-  datasource:
-    url: jdbc:mysql://loong.ubuntu:3306/order-db
-    username: root
-    password: 1234

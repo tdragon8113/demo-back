@@ -46,6 +46,7 @@
         <java.version>21</java.version>
         <spring.boot.version>3.4.5</spring.boot.version>
         <spring.cloud.version>2024.0.1</spring.cloud.version>
+        <spring.cloud.alibaba.version>2023.0.1.0</spring.cloud.alibaba.version>
         <hutool.version>5.8.38</hutool.version>
         <mybatis.version>3.5.12</mybatis.version>
         <druid.version>1.2.24</druid.version>
@@ -70,6 +71,14 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.cloud.alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

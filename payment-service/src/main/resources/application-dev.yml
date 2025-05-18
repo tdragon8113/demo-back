@@ -1,7 +1,0 @@
-spring:
-  application:
-    name: payment-service
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/payment-db
-    username: root
-    password: 1234

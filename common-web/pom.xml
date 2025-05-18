@@ -41,6 +41,23 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- Spring Cloud Bootstrap 依赖（Spring Boot 2.4+ 必须） -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-bootstrap</artifactId>
+    </dependency>
+
+    <!-- Nacos 配置中心 -->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+    </dependency>
+
+    <!-- Nacos 服务注册与发现 -->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+    </dependency>
 
   </dependencies>
 </project>

@@ -1,7 +1,1 @@
-spring:
-  application:
-    name: payment-service-local
-  datasource:
-    url: jdbc:mysql://loong.ubuntu:3306/payment-db
-    username: root
-    password: 1234
+

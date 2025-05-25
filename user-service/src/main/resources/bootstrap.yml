@@ -1,28 +1,27 @@
-server:
-  port: 8010
-
 spring:
+  application:
+    name: user-service
   # 默认激活配置
   profiles:
-    active: local
+    active: dev
   # 微服务配置
   cloud:
     nacos:
-      server-addr: loong.ubuntu:8848 # 如果用的云上托管版本，输入可访问的Nacos Server地址即可
+      server-addr: loong.cloud:8848 # 如果用的云上托管版本，输入可访问的Nacos Server地址即可
       # 配置中心
       # 默认读取
       # 1、${spring.application.name},
       # 2、${spring.application.name}.${spring.cloud.nacos.config.file-extension},
       # 3、${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
       config:
-#        server-addr: ${spring.cloud.nacos.server-addr}
+        server-addr: ${spring.cloud.nacos.server-addr}
         # 必须是 namespace id
-        namespace: 6906f6a8-d561-42fe-9130-50cf6807a061
         file-extension: yml
+        group: DEMO_GROUP
       # 注册与发现
       discovery:
-#        server-addr: ${spring.cloud.nacos.server-addr}
-        namespace: 6906f6a8-d561-42fe-9130-50cf6807a061
+        server-addr: ${spring.cloud.nacos.server-addr}
+        group: DEMO_GROUP
   config:
     # 导入远程公共配置
     import:

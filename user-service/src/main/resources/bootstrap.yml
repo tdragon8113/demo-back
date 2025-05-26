@@ -22,6 +22,10 @@ spring:
       discovery:
         server-addr: ${spring.cloud.nacos.server-addr}
         group: DEMO_GROUP
+    config:
+      allow-override: true       # 允许本地配置覆盖远程配置
+      override-none: true        # 本地配置文件、环境变量等可以覆盖远程配置
+      override-system-properties: false  # 禁止系统属性（-D参数）覆盖远程配置
   config:
     # 导入远程公共配置
     import:

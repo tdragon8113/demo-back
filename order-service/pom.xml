@@ -61,4 +61,24 @@
 
 
   </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Spring Boot 打包插件 -->
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <!--排除 Lombok 依赖: 确保 Lombok 不会被打包到 Spring Boot 构建的可执行 JAR/WAR 中-->
+            <exclude>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+            </exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>

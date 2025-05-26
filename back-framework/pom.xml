@@ -104,13 +104,13 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
                 <version>${mybatis.version}</version>
-                <exclusions>
-                    <!-- 排除默认的 HikariCP 数据源 -->
+                <!--<exclusions>
+                    &lt;!&ndash; 排除默认的 HikariCP 数据源 &ndash;&gt;
                     <exclusion>
                         <groupId>com.zaxxer</groupId>
                         <artifactId>HikariCP</artifactId>
                     </exclusion>
-                </exclusions>
+                </exclusions>-->
             </dependency>
             <!-- 阿里开源的 druid 数据源 - 用于jdbc连接事的数据源（注意：此 druid 版本适配 Spring Boot 3.0+版本） -->
             <dependency>
@@ -127,6 +127,26 @@
 
     <!-- 构建插件管理 -->
     <build>
+        <pluginManagement>
+            <plugins>
+                <!-- Spring Boot 打包插件 -->
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <configuration>
+                        <excludes>
+                            <!--排除 Lombok 依赖: 确保 Lombok 不会被打包到 Spring Boot 构建的可执行 JAR/WAR 中-->
+                            <exclude>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                            </exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <!-- 通用插件 -->
         <plugins>
             <!-- Maven 编译插件 -->
             <plugin>
@@ -142,21 +162,6 @@
                     </annotationProcessorPaths>
                     <!--编译测试用例代码后，跳过运行测试用例-->
                     <skip>true</skip>
-                </configuration>
-            </plugin>
-
-            <!-- Spring Boot 打包插件 -->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <!--排除 Lombok 依赖: 确保 Lombok 不会被打包到 Spring Boot 构建的可执行 JAR/WAR 中-->
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
                 </configuration>
             </plugin>
         </plugins>

@@ -10,39 +10,33 @@ spring:
 
   # 数据源配置
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://loong.cloud:3306/user-db
+    type: com.zaxxer.hikari.HikariDataSource
+    # Spring Boot可根据spring.datasource.url自动推断出合适的JDBC驱动程序
+    # driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://loong.cloud:3306/user-db?serverTimezone=Asia/Shanghai
     username: root
     password: wXrUxl7P
-    druid:
-      # 连接池基础参数
-      initial-size: 5       # 初始化连接数
-      max-active: 20        # 最大连接数
-      min-idle: 5           # 最小空闲连接数
-      max-wait: 60000       # 获取连接超时时间（毫秒）
-      validation-query: SELECT 1  # 连接有效性检测SQL
-      test-while-idle: true
+    hikari:
+      # 基础配置
+      maximum-pool-size: 10 #最大连接数，默认是 10
+      minimum-idle: 5 # 最小空闲连接数，默认与 maximum-pool-size 相同
+      idle-timeout: 600000 # 空闲连接超时时间（毫秒），默认 600000 (10分钟)
+      max-lifetime: 1800000 # 连接最大存活时间（毫秒），默认 1800000 (30分钟)
+      connection-timeout: 30000 # 获取连接的最大等待时间（毫秒），默认 30000 (30秒)
+      auto-commit: true # 开启自动提交，默认是 true
 
-      # 监控功能配置
-      web-stat-filter:
-        enabled: false       # 启用WebStatFilter
-        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"  # 排除路径
-      stat-view-servlet:
-        enabled: true       # 启用StatViewServlet
-        url-pattern: /druid/*  # 访问路径
-        login-username: admin  # 登录用户名
-        login-password: admin  # 登录密码
-        resetEnable: false     # 禁用"清空数据"按钮
-      # SQL监控配置
-      filters: stat,wall,log4j2  # 必须包含stat以启用监控
-      filter:
-        stat:
-          slow-sql-millis: 1000  # 慢SQL阈值（单位：毫秒）
-          log-slow-sql: true     # 记录慢SQL日志
-          merge-sql: true        # 合并相似SQL
-        wall:
-          enabled: true          # 启用SQL防火墙
-          config:
-            delete-allow: false  # 禁止DELETE操作
-            drop-table-allow: false  # 禁止DROP TABLE操作
+      # 数据库健康检查
+      validation-timeout: 5000 # 连接验证超时时间（毫秒）
+      keepalive-time: 300000            # TCP 保活（TCP 层检测）：心跳检测周期（毫秒），用于保持连接活跃
+      leak-detection-threshold: 60000   # 连接泄漏检测阈值（毫秒），超过该时间未释放则打印警告
+      # 对于 MYSQL，因为配置了validation-timeout: 5000，可不用配置 connection-test-query: SELECT 1
+      # MySQL 的 JDBC 驱动（com.mysql.cj.jdbc.Driver）针对 validation-timeout 支持一个更高效、更底层的连接验证方式 ——
+      # JDBC 4.1 标准中的 isValid(int timeout) 方法。
+      # connection-test-query: SELECT 1   # 每次从连接池获取连接前，Hikari 可以选择性地执行这个 SQL 来确认连接是否可用
+
+      # 其他扩展配置（可选）
+      pool-name: MyHikariPool # 自定义连接池名称，便于日志识别
+
+logging:
+  level:
+    com.zaxxer.hikari: DEBUG # 日志中看到连接池的创建、释放、验证等过程，有助于排查问题

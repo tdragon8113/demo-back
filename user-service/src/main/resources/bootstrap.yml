@@ -7,7 +7,7 @@ spring:
   # 微服务配置
   cloud:
     nacos:
-      server-addr: loong.cloud:8848 # 如果用的云上托管版本，输入可访问的Nacos Server地址即可
+      server-addr: 117.72.201.88:8848 # 如果用的云上托管版本，输入可访问的Nacos Server地址即可
       # 配置中心
       # 默认读取
       # 1、${spring.application.name},

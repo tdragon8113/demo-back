@@ -13,7 +13,7 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     # Spring Boot可根据spring.datasource.url自动推断出合适的JDBC驱动程序
     # driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://loong.cloud:3306/user-db?serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://117.72.201.88:3306/user-db?serverTimezone=Asia/Shanghai
     username: root
     password: wXrUxl7P
     hikari:
